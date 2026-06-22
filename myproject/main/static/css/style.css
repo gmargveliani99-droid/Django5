@@ -1,0 +1,104 @@
+/* სისტემური, სუფთა შრიფტები და smooth სკროლინგი */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #f8fafc; /* უფრო ნათელი და სუფთა ნაცრისფერი */
+    color: #1e293b; /* რბილი შავი ტექსტისთვის */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* საერთო კონტეინერი */
+.container {
+    width: 90%;
+    max-width: 1200px; /* რომ დიდ ეკრანებზე ძალიან არ გაიწელოს */
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Header */
+h1 {
+    color: #0f172a;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin-bottom: 24px;
+}
+
+/* ღილაკები */
+button {
+    padding: 12px 24px;
+    margin: 6px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb; /* უფრო თანამედროვე, მკაფიო ლურჯი */
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px); /* მსუბუქი წამოწევის ეფექტი */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* ფორმის ბლოკი */
+form {
+    background: white;
+    display: inline-block;
+    padding: 32px;
+    border-radius: 16px;
+    /* უფრო ბუნებრივი, რბილი ჩრდილი */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f1f5f9;
+    margin-top: 24px;
+}
+
+/* ინპუტების სტილი */
+input {
+    width: 280px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.2s;
+    outline: none;
+}
+
+/* ინპუტზე დაწკაპუნების (focus) ეფექტი */
+input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* ქარდები სიებისთვის */
+.card {
+    background: white;
+    width: 100%;
+    max-width: 340px;
+    margin: 16px auto;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.02); /* მსუბუქი ზუმი მიახლოებისას */
+}
+
+/* Home buttons layout */
+.home-buttons {
+    margin-top: 32px;
+}

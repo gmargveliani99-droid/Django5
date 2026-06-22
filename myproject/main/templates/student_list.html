@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Students</title>
+</head>
+<body>
+
+<h1>Student List</h1>
+
+<a href="/student/"><button>➕ Add Student</button></a>
+<a href="/"><button>🏠 Home</button></a>
+
+<hr>
+
+{% for student in students %}
+
+    <div style="border:1px solid #ccc; padding:10px; margin:10px;">
+        <h3>{{ student.first_name }} {{ student.last_name }}</h3>
+        <p>Age: {{ student.age }}</p>
+    </div>
+
+{% empty %}
+
+    <p>No students yet</p>
+
+{% endfor %}
+
+</body>
+</html>
