@@ -1,9 +1,13 @@
 from django import forms
 from .models import Student, Course
 
-class ProductForm(forms.Form):
-    name=forms.CharField(max_length=100)
-    price=forms.FloatField()
+from .models import Product
+
+
+class ProductForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = "__all__"
 
     def clean_price(self):
         price = self.cleaned_data["price"]

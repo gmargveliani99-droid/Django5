@@ -7,21 +7,32 @@
 
 <h1>Student List</h1>
 
-<a href="/student/"><button>➕ Add Student</button></a>
-<a href="/"><button>🏠 Home</button></a>
+<!-- ADD STUDENT -->
+<a href="{% url 'student_create' %}">➕ Add Student</a>
+
+<!-- HOME -->
+<a href="{% url 'home' %}">🏠 Home</a>
 
 <hr>
 
 {% for student in students %}
 
     <div style="border:1px solid #ccc; padding:10px; margin:10px;">
+
         <h3>{{ student.first_name }} {{ student.last_name }}</h3>
         <p>Age: {{ student.age }}</p>
+
+        <!-- EDIT -->
+        <a href="{% url 'student_update' student.id %}">✏️ Edit</a>
+
+        <!-- DELETE -->
+        <a href="{% url 'student_delete' student.id %}">🗑️ Delete</a>
+
     </div>
 
 {% empty %}
 
-    <p>No students yet</p>
+    <p>No students yet 😢</p>
 
 {% endfor %}
 

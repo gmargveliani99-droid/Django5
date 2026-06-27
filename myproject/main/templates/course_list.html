@@ -7,21 +7,32 @@
 
 <h1>Course List</h1>
 
-<a href="/course/"><button>➕ Add Course</button></a>
-<a href="/"><button>🏠 Home</button></a>
+<!-- ADD COURSE -->
+<a href="{% url 'course_create' %}">➕ Add Course</a>
+
+<!-- HOME -->
+<a href="{% url 'home' %}">🏠 Home</a>
 
 <hr>
 
 {% for course in courses %}
 
     <div style="border:1px solid #ccc; padding:10px; margin:10px;">
+
         <h3>{{ course.title }}</h3>
         <p>Duration: {{ course.duration }} months</p>
+
+        <!-- EDIT -->
+        <a href="{% url 'course_update' course.id %}">✏️ Edit</a>
+
+        <!-- DELETE -->
+        <a href="{% url 'course_delete' course.id %}">🗑️ Delete</a>
+
     </div>
 
 {% empty %}
 
-    <p>No courses yet</p>
+    <p>No courses yet 😢</p>
 
 {% endfor %}
 

@@ -7,15 +7,27 @@
 
 <h1>Products</h1>
 
-<a href="/product/">➕ Add Product</a>
+<!-- ADD PRODUCT -->
+<a href="{% url 'product_create' %}">➕ Add Product</a>
+
+<!-- HOME -->
+<a href="{% url 'home' %}">🏠 Home</a>
 
 <hr>
 
 {% for product in products %}
 
     <div style="border:1px solid #ccc; padding:10px; margin:10px;">
+
         <h3>Name: {{ product.name }}</h3>
         <p>Price: {{ product.price }}</p>
+
+        <!-- EDIT -->
+        <a href="{% url 'product_update' product.id %}">✏️ Edit</a>
+
+        <!-- DELETE -->
+        <a href="{% url 'product_delete' product.id %}">🗑️ Delete</a>
+
     </div>
 
 {% empty %}
